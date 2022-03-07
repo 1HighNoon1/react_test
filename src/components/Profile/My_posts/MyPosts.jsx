@@ -2,14 +2,11 @@ import classes from './MyPosts.module.css';
 import MyPost from "./Posts/MyPost";
 
 
-const MyPosts =() => {
+const MyPosts =(props) => {
 
-    let postsData=[
-        {id:1,postText: 'Hello',likes:'0'},
-        {id:1,postText: 'Hello',likes:'12'},
-        {id:1,postText: 'Hello',likes:'10'},
-        {id:1,postText: 'Hello',likes:'80'},
-    ]
+
+
+   let PostElement=props.postsData.map(postsData=><MyPost meassage={postsData.postText} LikeCount={props.postsData.likes}/>);
 
 
     return (
@@ -19,9 +16,8 @@ const MyPosts =() => {
                 <div><button>add post</button></div>
             </div>
             <div>
-                <MyPost meassage={postsData[0].postText} LikeCount={postsData[0].likes}/>
-                <MyPost meassage={postsData[1].postText} LikeCount={postsData[1].likes}/>
-                <MyPost meassage={postsData[2].postText} LikeCount={postsData[2].likes}/>
+                {PostElement}
+
             </div>
         </div>
     );
