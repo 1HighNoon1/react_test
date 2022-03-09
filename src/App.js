@@ -9,6 +9,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 const App = (props)=> {
 
+   // console.log(props);
   return (
 <BrowserRouter>
       <div className="App-wrapp">
@@ -18,8 +19,8 @@ const App = (props)=> {
 
           <div style={style.wrapper_content}>
               <Routes>
-                  <Route path="/dialogs/*" element={<Dialogs MessagesData={props.MessagesData} dialogsData={props.dialogsData} />} />
-                  <Route path="/profile/*" element={<Profile postsData={props.postsData}/>} />
+                  <Route path="/dialogs/*" element={<Dialogs messagesPageData={props.state.messagesPage}/>} />
+                  <Route path="/profile/*" element={<Profile profilePageData={props.state.profilePage}/>} />
               </Routes>
 
            </div>
